@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+div#memory_board{
+	background:#e7e7f3;
+	border:#999 1px solid;
+	width:800px;
+	height:540px;
+	padding:24px;
+	margin:0px auto;
+}
+div#memory_board > div{
+	background:#b0b0f0;
+	border:#000 1px solid;
+	width:71px;
+	height:71px;
+	float:left;
+	margin:10px;
+	padding:20px;
+	font-size:64px;
+	cursor:pointer;
+	text-align:center;
+}
+#flipped,#moves
+    {
+        padding-left: 30px;
+    }
+.game_info
+    {
+        
+        padding: 20px 17% 20px 17%;
+    }
+</style>
+<script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+<div id="memory_board"></div>
+<script>newBoard();</script>
+<div class="game_info">
+    <h2>
+        <span class="timer">
+            0 mins 0 secs
+        </span>
+        <span id="flipped">
+            Tile(s) Flipped = 0
+        </span>
+    </h2>
+    
+</div>
+    
+<!--script for timer-->
+<script>
+  var second = 0, minute = 0;
+    var timer = document.querySelector(".timer");
+    var interval;
+    function startTimer(){
+        interval = setInterval(function(){
+            timer.innerHTML = minute+" mins "+second+" secs";
+            second++;
+            if(second == 60){
+                minute++;
+                second = 0;
+            }
+            if(minute == 60){
+                hour++;
+                minute = 0;
+            }
+        },1000);
+    }
+</script>    
+</body>
+</html>
